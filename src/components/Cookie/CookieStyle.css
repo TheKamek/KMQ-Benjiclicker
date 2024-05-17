@@ -1,0 +1,45 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+}
+
+.benjiCookie {
+  z-index: 100;
+
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.benjiCookie.clicked {
+  animation: wiggle 0.5s ease-in-out;
+}
+.panel {
+  width: 50px;
+  height: 50px;
+  background-color: red;
+}
