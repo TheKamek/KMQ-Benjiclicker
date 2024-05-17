@@ -48,13 +48,11 @@ const Shop = ({
               onClick={() => {
                 if (
                   score >=
-                  (1 + autoclicker) * 100 +
-                    ((autoclicker * autoclicker) / 100) * 25
+                  (1 + autoclicker) * 100 + autoclicker * autoclicker * 25
                 ) {
                   setScore(
                     score -
-                      ((1 + autoclicker) * 100 +
-                        ((autoclicker * autoclicker) / 100) * 25)
+                      ((1 + autoclicker) * 100 + autoclicker * autoclicker * 25)
                   );
                   setautoclicker(autoclicker + 1);
                   setAutoClicksPerSecond((prev) => prev + 1);
@@ -62,21 +60,19 @@ const Shop = ({
               }}
             >
               Autoclicker 1C/s: {autoclicker}, Buy:{" "}
-              {(1 + autoclicker) * 100 +
-                ((autoclicker * autoclicker) / 100) * 25}
+              {(1 + autoclicker) * 100 + autoclicker * autoclicker * 25}
             </div>
             <div
               className="item"
               onClick={() => {
                 if (
                   score >=
-                  (1 + Gautoclicker) * 1000 +
-                    ((Gautoclicker * Gautoclicker) / 100) * 25
+                  (1 + Gautoclicker) * 1000 + Gautoclicker * Gautoclicker * 25
                 ) {
                   setScore(
                     score -
                       ((1 + Gautoclicker) * 1000 +
-                        ((Gautoclicker * Gautoclicker) / 100) * 25)
+                        Gautoclicker * Gautoclicker * 25)
                   );
                   setGautoclicker(Gautoclicker + 1);
                   setAutoClicksPerSecond((prev) => prev + 20);
@@ -84,8 +80,7 @@ const Shop = ({
               }}
             >
               Galus-Clicker 20C/s: {Gautoclicker}, Buy:{" "}
-              {(1 + Gautoclicker) * 1000 +
-                ((Gautoclicker * Gautoclicker) / 100) * 25}
+              {(1 + Gautoclicker) * 1000 + Gautoclicker * Gautoclicker * 25}
               <br />
               <div className="nextLineDiv">
                 {Array.from({ length: Math.min(10, Gautoclicker) }, (_, i) => (
@@ -105,13 +100,12 @@ const Shop = ({
               onClick={() => {
                 if (
                   score >=
-                  (1 + Rautoclicker) * 50000 +
-                    ((Rautoclicker * Rautoclicker) / 100) * 25
+                  (1 + Rautoclicker) * 50000 + Rautoclicker * Rautoclicker * 25
                 ) {
                   setScore(
                     score -
                       ((1 + Rautoclicker) * 50000 +
-                        ((Rautoclicker * Rautoclicker) / 100) * 25)
+                        Rautoclicker * Rautoclicker * 25)
                   );
                   setRautoclicker(Rautoclicker + 1);
                   setAutoClicksPerSecond((prev) => prev + 150);
@@ -119,8 +113,7 @@ const Shop = ({
               }}
             >
               Ruth-Clicker 150C/s: {Rautoclicker}, Buy:{" "}
-              {(1 + Rautoclicker) * 50000 +
-                ((Rautoclicker * Rautoclicker) / 100) * 25}
+              {(1 + Rautoclicker) * 50000 + Rautoclicker * Rautoclicker * 25}
               <br />
               <div>
                 {Array.from({ length: Math.min(10, Rautoclicker) }, (_, i) => (
