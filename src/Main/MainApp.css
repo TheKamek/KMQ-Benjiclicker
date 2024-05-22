@@ -1,0 +1,43 @@
+.mainDiv {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.mainImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.orangeBackground,
+.purpleBackground,
+.redBackground,
+.greenBackground,
+.greyBackground {
+  background-color: orange; /* Each div will have its specific color */
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.orangeBackground {
+  background-color: orange;
+}
+
+.purpleBackground {
+  background-color: purple;
+}
+
+.redBackground {
+  background-color: red;
+}
+
+.greenBackground {
+  background-color: green;
+}
+
+.greyBackground {
+  background-color: grey;
+}

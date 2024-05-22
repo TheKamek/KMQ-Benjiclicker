@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./CookieStyle.css";
 
 const Cookie = ({
@@ -50,7 +50,7 @@ const Cookie = ({
   return (
     <div className="main">
       <>
-        {cookieBurn == true ? (
+        {cookieBurn === true ? (
           <div>
             <img
               className={`benjiCookie ${isClicked ? "clicked" : ""}`}

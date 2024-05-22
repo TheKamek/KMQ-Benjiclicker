@@ -86,7 +86,7 @@ const Shop = ({
                 {Array.from({ length: Math.min(10, Gautoclicker) }, (_, i) => (
                   <img
                     key={i}
-                    alt={`Gautoclicker image ${i}`}
+                    alt={`Gautoclicker ${i}`}
                     src="/gallu.jpg"
                     className={`imgSub animated-delay`}
                     style={{ "--delay": `${Math.random() * 5}s` }}
@@ -119,7 +119,7 @@ const Shop = ({
                 {Array.from({ length: Math.min(10, Rautoclicker) }, (_, i) => (
                   <img
                     key={i}
-                    alt={`Rautoclicker image ${i}`}
+                    alt={`Rautoclicker ${i}`}
                     src="/ruthu.png"
                     className="imgSub"
                   />
