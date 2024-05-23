@@ -5,6 +5,7 @@ import PurpleRoom from "./Rooms/PurpleRoom";
 import RedRoom from "./Rooms/RedRoom";
 import GreenRoom from "./Rooms/GreenRoom";
 import GreyRoom from "./Rooms/GreyRoom";
+
 const MainApp = () => {
   const [doorClickedOrange, setDoorClickedOrange] = useState(false);
   const [doorClickedPurple, setDoorClickedPurple] = useState(false);
@@ -12,6 +13,15 @@ const MainApp = () => {
   const [doorClickedGreen, setDoorClickedGreen] = useState(false);
   const [doorClickedGrey, setDoorClickedGrey] = useState(false);
   const containerRef = useRef(null);
+
+  const backButton = (event) => {
+    event.stopPropagation();
+    setDoorClickedGreen(false);
+    setDoorClickedGrey(false);
+    setDoorClickedOrange(false);
+    setDoorClickedPurple(false);
+    setDoorClickedRed(false);
+  };
 
   const handleClick = (event) => {
     const container = containerRef.current;
@@ -49,51 +59,58 @@ const MainApp = () => {
       y1: 0.73 * containerRect.height,
       y2: 0.85 * containerRect.height,
     };
-
     if (
-      clickX > doorAreaOrange.x1 &&
-      clickX < doorAreaOrange.x2 &&
-      clickY > doorAreaOrange.y1 &&
-      clickY < doorAreaOrange.y2
+      !doorClickedGreen &&
+      !doorClickedGrey &&
+      !doorClickedOrange &&
+      !doorClickedPurple &&
+      !doorClickedRed
     ) {
-      setDoorClickedOrange(true);
-      console.log("Orange Door clicked");
-    }
-    if (
-      clickX > doorAreaPurple.x1 &&
-      clickX < doorAreaPurple.x2 &&
-      clickY > doorAreaPurple.y1 &&
-      clickY < doorAreaPurple.y2
-    ) {
-      setDoorClickedPurple(true);
-      console.log("Purple Door clicked");
-    }
-    if (
-      clickX > doorAreaRed.x1 &&
-      clickX < doorAreaRed.x2 &&
-      clickY > doorAreaRed.y1 &&
-      clickY < doorAreaRed.y2
-    ) {
-      setDoorClickedRed(true);
-      console.log("Red Door clicked");
-    }
-    if (
-      clickX > doorAreaGreen.x1 &&
-      clickX < doorAreaGreen.x2 &&
-      clickY > doorAreaGreen.y1 &&
-      clickY < doorAreaGreen.y2
-    ) {
-      setDoorClickedGreen(true);
-      console.log("Green Door clicked");
-    }
-    if (
-      clickX > doorAreaGrey.x1 &&
-      clickX < doorAreaGrey.x2 &&
-      clickY > doorAreaGrey.y1 &&
-      clickY < doorAreaGrey.y2
-    ) {
-      setDoorClickedGrey(true);
-      console.log("Grey Door clicked");
+      if (
+        clickX > doorAreaOrange.x1 &&
+        clickX < doorAreaOrange.x2 &&
+        clickY > doorAreaOrange.y1 &&
+        clickY < doorAreaOrange.y2
+      ) {
+        setDoorClickedOrange(true);
+        console.log("Orange Door clicked");
+      }
+      if (
+        clickX > doorAreaPurple.x1 &&
+        clickX < doorAreaPurple.x2 &&
+        clickY > doorAreaPurple.y1 &&
+        clickY < doorAreaPurple.y2
+      ) {
+        setDoorClickedPurple(true);
+        console.log("Purple Door clicked");
+      }
+      if (
+        clickX > doorAreaRed.x1 &&
+        clickX < doorAreaRed.x2 &&
+        clickY > doorAreaRed.y1 &&
+        clickY < doorAreaRed.y2
+      ) {
+        setDoorClickedRed(true);
+        console.log("Red Door clicked");
+      }
+      if (
+        clickX > doorAreaGreen.x1 &&
+        clickX < doorAreaGreen.x2 &&
+        clickY > doorAreaGreen.y1 &&
+        clickY < doorAreaGreen.y2
+      ) {
+        setDoorClickedGreen(true);
+        console.log("Green Door clicked");
+      }
+      if (
+        clickX > doorAreaGrey.x1 &&
+        clickX < doorAreaGrey.x2 &&
+        clickY > doorAreaGrey.y1 &&
+        clickY < doorAreaGrey.y2
+      ) {
+        setDoorClickedGrey(true);
+        console.log("Grey Door clicked");
+      }
     }
   };
 
@@ -123,11 +140,11 @@ const MainApp = () => {
               : ""
           }
         >
-          {doorClickedOrange && <OrangeRoom />}
-          {doorClickedPurple && <PurpleRoom />}
-          {doorClickedRed && <RedRoom />}
-          {doorClickedGreen && <GreenRoom />}
-          {doorClickedGrey && <GreyRoom />}
+          {doorClickedOrange && <OrangeRoom backButtonClick={backButton} />}
+          {doorClickedPurple && <PurpleRoom backButtonClick={backButton} />}
+          {doorClickedRed && <RedRoom backButtonClick={backButton} />}
+          {doorClickedGreen && <GreenRoom backButtonClick={backButton} />}
+          {doorClickedGrey && <GreyRoom backButtonClick={backButton} />}
         </div>
       )}
     </div>

@@ -1,0 +1,105 @@
+.calendar {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  height: 90%;
+  max-height: 600px;
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: 500px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.header button {
+  background-color: #800080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.header button:hover {
+  background-color: #0056b3;
+}
+
+.header span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.days-of-week,
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+}
+
+.day-of-week,
+.day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  height: 9vw; /* Adjust the height for better responsiveness */
+  max-height: 60px;
+}
+
+.day-of-week {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+.day {
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s;
+}
+
+.day:hover {
+  background-color: #f1f1f1;
+}
+
+.day .entry {
+  position: absolute;
+  bottom: 0; /* Changed from top: 0; to bottom: 0; */
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 123, 255, 0.1);
+  font-size: 12px;
+  padding: 2px;
+  border-radius: 0 0 4px 4px; /* Adjusted border-radius to match the change in positioning */
+  text-align: center;
+}
+
+.day .repeating {
+  font-style: italic;
+  font-size: 10px;
+  color: #666;
+}
+
+.empty-day {
+  border: none;
+}
+.dayNbr {
+  position: absolute;
+  top: 2px; /* Added top: 0; */
+}
