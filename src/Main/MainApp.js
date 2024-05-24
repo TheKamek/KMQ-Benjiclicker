@@ -1,151 +1,64 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./MainApp.css";
-import OrangeRoom from "./Rooms/OrangeRoom";
-import PurpleRoom from "./Rooms/PurpleRoom";
-import RedRoom from "./Rooms/RedRoom";
-import GreenRoom from "./Rooms/GreenRoom";
-import GreyRoom from "./Rooms/GreyRoom";
-
+import Github from "./Subpages/Github";
+import Misc from "./Subpages/Misc";
 const MainApp = () => {
-  const [doorClickedOrange, setDoorClickedOrange] = useState(false);
-  const [doorClickedPurple, setDoorClickedPurple] = useState(false);
-  const [doorClickedRed, setDoorClickedRed] = useState(false);
-  const [doorClickedGreen, setDoorClickedGreen] = useState(false);
-  const [doorClickedGrey, setDoorClickedGrey] = useState(false);
-  const containerRef = useRef(null);
+  const [activeTab, setActiveTab] = useState("Home");
 
-  const backButton = (event) => {
-    event.stopPropagation();
-    setDoorClickedGreen(false);
-    setDoorClickedGrey(false);
-    setDoorClickedOrange(false);
-    setDoorClickedPurple(false);
-    setDoorClickedRed(false);
+  const handleTabClick = (tab) => {
+    setActiveTab(tab);
   };
 
-  const handleClick = (event) => {
-    const container = containerRef.current;
-    const containerRect = container.getBoundingClientRect();
-
-    const clickX = event.clientX - containerRect.left;
-    const clickY = event.clientY - containerRect.top;
-    const doorAreaOrange = {
-      x1: 0.235 * containerRect.width,
-      x2: 0.29 * containerRect.width,
-      y1: 0.73 * containerRect.height,
-      y2: 0.85 * containerRect.height,
-    };
-    const doorAreaPurple = {
-      x1: 0.815 * containerRect.width,
-      x2: 0.875 * containerRect.width,
-      y1: 0.73 * containerRect.height,
-      y2: 0.85 * containerRect.height,
-    };
-    const doorAreaRed = {
-      x1: 0.65 * containerRect.width,
-      x2: 0.69 * containerRect.width,
-      y1: 0.73 * containerRect.height,
-      y2: 0.85 * containerRect.height,
-    };
-    const doorAreaGreen = {
-      x1: 0.45 * containerRect.width,
-      x2: 0.52 * containerRect.width,
-      y1: 0.73 * containerRect.height,
-      y2: 0.85 * containerRect.height,
-    };
-    const doorAreaGrey = {
-      x1: 0.026 * containerRect.width,
-      x2: 0.055 * containerRect.width,
-      y1: 0.73 * containerRect.height,
-      y2: 0.85 * containerRect.height,
-    };
-    if (
-      !doorClickedGreen &&
-      !doorClickedGrey &&
-      !doorClickedOrange &&
-      !doorClickedPurple &&
-      !doorClickedRed
-    ) {
-      if (
-        clickX > doorAreaOrange.x1 &&
-        clickX < doorAreaOrange.x2 &&
-        clickY > doorAreaOrange.y1 &&
-        clickY < doorAreaOrange.y2
-      ) {
-        setDoorClickedOrange(true);
-        console.log("Orange Door clicked");
-      }
-      if (
-        clickX > doorAreaPurple.x1 &&
-        clickX < doorAreaPurple.x2 &&
-        clickY > doorAreaPurple.y1 &&
-        clickY < doorAreaPurple.y2
-      ) {
-        setDoorClickedPurple(true);
-        console.log("Purple Door clicked");
-      }
-      if (
-        clickX > doorAreaRed.x1 &&
-        clickX < doorAreaRed.x2 &&
-        clickY > doorAreaRed.y1 &&
-        clickY < doorAreaRed.y2
-      ) {
-        setDoorClickedRed(true);
-        console.log("Red Door clicked");
-      }
-      if (
-        clickX > doorAreaGreen.x1 &&
-        clickX < doorAreaGreen.x2 &&
-        clickY > doorAreaGreen.y1 &&
-        clickY < doorAreaGreen.y2
-      ) {
-        setDoorClickedGreen(true);
-        console.log("Green Door clicked");
-      }
-      if (
-        clickX > doorAreaGrey.x1 &&
-        clickX < doorAreaGrey.x2 &&
-        clickY > doorAreaGrey.y1 &&
-        clickY < doorAreaGrey.y2
-      ) {
-        setDoorClickedGrey(true);
-        console.log("Grey Door clicked");
-      }
+  const renderContent = () => {
+    switch (activeTab) {
+      case "Home":
+        return <div className="Home">Home Content</div>;
+      case "Contact":
+        return <div className="Contact">Contact Content</div>;
+      case "Github":
+        return <Github></Github>;
+      case "Data":
+        return <div className="Data">Data Content</div>;
+      case "Notes":
+        return <div className="Notes">Notes Content</div>;
+      case "Misc":
+        return <Misc></Misc>;
+      default:
+        return <div className="Home">Home Content</div>;
     }
   };
 
   return (
-    <div className="mainDiv" ref={containerRef} onClick={handleClick}>
-      {!(
-        doorClickedOrange ||
-        doorClickedPurple ||
-        doorClickedRed ||
-        doorClickedGreen ||
-        doorClickedGrey
-      ) ? (
-        <img src="/World.png" alt="World" className="mainImg" />
-      ) : (
-        <div
-          className={
-            doorClickedOrange
-              ? "orangeBackground"
-              : doorClickedPurple
-              ? "purpleBackground"
-              : doorClickedRed
-              ? "redBackground"
-              : doorClickedGreen
-              ? "greenBackground"
-              : doorClickedGrey
-              ? "greyBackground"
-              : ""
-          }
-        >
-          {doorClickedOrange && <OrangeRoom backButtonClick={backButton} />}
-          {doorClickedPurple && <PurpleRoom backButtonClick={backButton} />}
-          {doorClickedRed && <RedRoom backButtonClick={backButton} />}
-          {doorClickedGreen && <GreenRoom backButtonClick={backButton} />}
-          {doorClickedGrey && <GreyRoom backButtonClick={backButton} />}
+    <div className="main-app">
+      <div className="topbar">
+        <nav>
+          <ul>
+            {["Home", "Contact", "Github", "Data", "Notes", "Misc"].map(
+              (tab) => (
+                <li
+                  key={tab}
+                  className={activeTab === tab ? "active" : ""}
+                  onClick={() => handleTabClick(tab)}
+                >
+                  {tab}
+                </li>
+              )
+            )}
+          </ul>
+        </nav>
+      </div>
+      {activeTab === "Home" ? (
+        <div className="feed">
+          <div className="feedAccurate">
+            {Array.from({ length: 20 }).map((_, index) => (
+              <div key={index} className="feed-item">
+                This is a placeholder for your component {index + 1}
+              </div>
+            ))}
+          </div>
         </div>
+      ) : (
+        renderContent()
       )}
     </div>
   );

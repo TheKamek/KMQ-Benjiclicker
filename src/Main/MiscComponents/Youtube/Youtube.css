@@ -1,0 +1,47 @@
+.backButton {
+  background-color: rgb(156, 156, 226);
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  left: 42.5%;
+  width: 15%;
+}
+.container {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.icon {
+  font-size: 10rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.icon:hover {
+  color: #ff4d4d; /* Change this to whatever color you prefer */
+}
+
+.youtube {
+  color: #d80000;
+}
+
+.twitch {
+  color: #9146ff;
+}
+
+.instagram {
+  color: #000000;
+}

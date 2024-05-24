@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./BenjiApp.css";
-import Cookie from "./components/Cookie/Cookie";
-import TopBar from "./components/TopBar/TopBar";
-import Shop from "./components/Shop/Shop";
+import Cookie from "../Cookie/Benjiclicker/components/Cookie/Cookie";
+import TopBar from "../Cookie/Benjiclicker/components/TopBar/TopBar";
+import Shop from "../Cookie/Benjiclicker/components/Shop/Shop";
 
 function BenjiApp() {
-  const [score, setScore] = useState(1000000000000);
-  const [showApp, setShowApp] = useState(false);
+  const [score, setScore] = useState(0);
+  const [showApp, setShowApp] = useState(true);
   const [pointsToIncrease, setPointsToIncrease] = useState(1);
   const [autoClicksPerSecond, setAutoClicksPerSecond] = useState(0);
   const [cookieBurn, setCookieBurn] = useState(true);

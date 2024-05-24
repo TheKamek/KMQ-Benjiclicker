@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import Calendar from "./RoomsubComponents/Purple/Calendar";
-import Youtube from "./RoomsubComponents/Purple/Youtube";
+import Calendar from "../MiscComponents/Calendar/Calendar";
+import Youtube from "../MiscComponents/Youtube/Youtube";
 const PurpleRoom = ({ backButtonClick }) => {
   const containerRef = useRef(null);
   const [containerRect, setContainerRect] = useState(null);
@@ -103,6 +103,7 @@ const PurpleRoom = ({ backButtonClick }) => {
         case "Youtube":
           setYoutube(true);
           setRenderRoom(false);
+          break;
         default:
           console.log(clickedObject);
       }

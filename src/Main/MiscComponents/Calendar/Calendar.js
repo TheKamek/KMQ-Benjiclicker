@@ -71,7 +71,7 @@ const Calendar = ({ backButtonClickRoom }) => {
       let repeatingEntry = null;
       if (!entry) {
         const repeatingKey = Object.keys(entries).find((key) => {
-          const [entryYear, entryMonth, entryDay] = key.split("-");
+          const [, entryMonth, entryDay] = key.split("-");
           return (
             entries[key].repeat && entryMonth === month && entryDay === dayStr
           );

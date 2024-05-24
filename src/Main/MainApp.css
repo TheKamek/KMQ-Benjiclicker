@@ -1,43 +1,100 @@
-.mainDiv {
-  width: 100%;
-  height: 100%;
+.main-app {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-.mainImg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+.topbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
 }
-.orangeBackground,
-.purpleBackground,
-.redBackground,
-.greenBackground,
-.greyBackground {
-  background-color: orange; /* Each div will have its specific color */
-  width: 100%;
-  height: auto;
-  min-height: 100vh;
+
+nav ul {
+  list-style-type: none;
   display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  margin: 0;
+  padding: 0;
 }
 
-.orangeBackground {
-  background-color: orange;
+nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
-.purpleBackground {
-  background-color: purple;
+nav ul li.active {
+  border-bottom: 2px solid white;
 }
 
-.redBackground {
-  background-color: rgb(135, 0, 0);
+.feed {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  background-color: #f0f0f0;
+  display: flex;
+
+  justify-content: center;
+  align-items: center; /* Add this to center content vertically */
 }
 
-.greenBackground {
-  background-color: green;
+.feed-item {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 40%; /* Adjust the width as needed */
+  display: flex;
+  flex-wrap: nowrap;
 }
 
-.greyBackground {
-  background-color: grey;
+@media (max-width: 768px) {
+  .feed-item {
+    width: 90%; /* Adjust for mobile devices */
+  }
+}
+
+.Home,
+.Contact,
+.Github,
+.Data,
+.Notes,
+.Misc {
+  flex: 1;
+  padding: 20px;
+}
+
+.Home {
+  background-color: lightblue;
+}
+.Contact {
+  background-color: lightcoral;
+}
+.Github {
+  background-color: lightgreen;
+}
+.Data {
+  background-color: lightgoldenrodyellow;
+}
+.Notes {
+  background-color: lightpink;
+}
+.Misc {
+  background-color: lightgray;
+}
+.feedAccurate {
+  border: black 2px solid;
+  display: flex;
+  flex-direction: column; /* Display items in a vertical layout */
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: 200px;
+  width: 70%;
+  background-color: rgb(255, 255, 255);
+  height: 200%;
+  top: 100px;
+  margin-top: 75%;
+  padding: 20px;
 }
