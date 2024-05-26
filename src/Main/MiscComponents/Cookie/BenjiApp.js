@@ -4,7 +4,7 @@ import Cookie from "../Cookie/Benjiclicker/components/Cookie/Cookie";
 import TopBar from "../Cookie/Benjiclicker/components/TopBar/TopBar";
 import Shop from "../Cookie/Benjiclicker/components/Shop/Shop";
 
-function BenjiApp() {
+function BenjiApp({ backButtonClickRoom }) {
   const [score, setScore] = useState(0);
   const [showApp, setShowApp] = useState(true);
   const [pointsToIncrease, setPointsToIncrease] = useState(1);
@@ -69,6 +69,15 @@ function BenjiApp() {
             score={score}
             setAutoClicksPerSecond={setAutoClicksPerSecond}
           />
+          <button
+            className="backButton"
+            onClick={(event) => {
+              event.stopPropagation();
+              backButtonClickRoom(); // Call the handleBackClick function passed as a prop
+            }}
+          >
+            Back
+          </button>
         </>
       ) : (
         <button onClick={handleShowAppClick}>Show App</button>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./MainApp.css";
 import Github from "./Subpages/Github";
 import Misc from "./Subpages/Misc";
+import Notes from "./Subpages/Notes";
 const MainApp = () => {
   const [activeTab, setActiveTab] = useState("Home");
 
@@ -19,8 +20,8 @@ const MainApp = () => {
         return <Github></Github>;
       case "Data":
         return <div className="Data">Data Content</div>;
-      case "Notes":
-        return <div className="Notes">Notes Content</div>;
+      case "Library":
+        return <Notes></Notes>;
       case "Misc":
         return <Misc></Misc>;
       default:
@@ -33,7 +34,7 @@ const MainApp = () => {
       <div className="topbar">
         <nav>
           <ul>
-            {["Home", "Contact", "Github", "Data", "Notes", "Misc"].map(
+            {["Home", "Contact", "Github", "Data", "Library", "Misc"].map(
               (tab) => (
                 <li
                   key={tab}

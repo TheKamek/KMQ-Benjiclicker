@@ -93,7 +93,7 @@ const Github = () => {
                   <span style={{ display: "block" }}>
                     {"Updated at: " + repo.updated_at}
                   </span>
-                  <a href={repo.html_url}>{"Link:" + repo.name}</a>
+                  <a href={repo.html_url}>{"Link: " + repo.name}</a>
                   <span style={{ display: "block" }}>
                     ----------------------------------------
                   </span>

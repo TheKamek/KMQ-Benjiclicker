@@ -9,14 +9,16 @@
   padding: 0;
   margin: 0;
   user-select: none;
+  -webkit-user-select: none;
 }
 
 .benjiCookie {
   z-index: 100;
-
+  width: 300px;
   padding: 0;
   margin: 0;
   user-select: none;
+  -webkit-user-select: none;
 }
 
 @keyframes wiggle {
@@ -39,6 +41,7 @@
 
 .benjiCookie.clicked {
   user-select: none;
+  -webkit-user-select: none;
   animation: wiggle 0.5s ease-in-out;
 }
 .panel {

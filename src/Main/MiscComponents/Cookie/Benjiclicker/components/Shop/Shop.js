@@ -41,7 +41,7 @@ const Shop = ({
                 }
               }}
             >
-              💪 Clickstrength: {pointsToIncrease}, Buy: {pointsToIncrease * 25}
+              💪 Gym-Master: {pointsToIncrease}, Buy: {pointsToIncrease * 25}
             </div>
             <div
               className="item"
@@ -59,7 +59,7 @@ const Shop = ({
                 }
               }}
             >
-              Autoclicker 1C/s: {autoclicker}, Buy:{" "}
+              Lia's Motivation 1C/s: {autoclicker}, Buy:{" "}
               {(1 + autoclicker) * 100 + autoclicker * autoclicker * 25}
             </div>
             <div
@@ -79,7 +79,7 @@ const Shop = ({
                 }
               }}
             >
-              Galus-Clicker 20C/s: {Gautoclicker}, Buy:{" "}
+              Erschrockener-Andri-Clicker 20C/s: {Gautoclicker}, Buy:{" "}
               {(1 + Gautoclicker) * 1000 + Gautoclicker * Gautoclicker * 25}
               <br />
               <div className="nextLineDiv">
@@ -112,7 +112,7 @@ const Shop = ({
                 }
               }}
             >
-              Ruth-Clicker 150C/s: {Rautoclicker}, Buy:{" "}
+              Wütender-Andri-Clicker 150C/s: {Rautoclicker}, Buy:{" "}
               {(1 + Rautoclicker) * 50000 + Rautoclicker * Rautoclicker * 25}
               <br />
               <div>

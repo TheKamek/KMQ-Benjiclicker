@@ -13,6 +13,7 @@ const Calendar = ({ backButtonClickRoom }) => {
     "2024-08-18": { description: "Andri Bühler Birthday", repeat: true },
     "2024-10-26": { description: "King Lee Birthday", repeat: true },
     "2024-01-12": { description: "Nico Benninger Birthday", repeat: true },
+    "2024-04-28": { description: "Christina Muric Birthday", repeat: true },
   });
 
   const daysOfWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
